@@ -584,6 +584,11 @@ func TestConvertOsArgs(t *testing.T) {
 			[]string{"-X", "-k2"},
 			[]string{"-X", "0", "-k2"},
 		},
+		{
+			"flag with empty value",
+			[]string{"-S", "server", "-U", "sa", "-d", "", "-Q", "SELECT 1", "-b"},
+			[]string{"-S", "server", "-U", "sa", "-d", "", "-Q", "SELECT 1", "-b"},
+		},
 	}
 	for _, c := range tests {
 		t.Run(c.name, func(t *testing.T) {
