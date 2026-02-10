@@ -593,7 +593,7 @@ func TestConvertOsArgs(t *testing.T) {
 	for _, c := range tests {
 		t.Run(c.name, func(t *testing.T) {
 			actual := convertOsArgs(c.in)
-			assert.ElementsMatch(t, c.expected, actual, "Incorrect converted args")
+			assert.Equal(t, c.expected, actual, "Incorrect converted args")
 		})
 	}
 }
